@@ -1,0 +1,22 @@
+struct DSU {
+	vi p;
+	vi s;
+	DSU(int n) {
+		p = vi(n);
+		loop(i,0,n) p[i] = i;
+		s = vi(n,1);
+	}
+	void link(int a,int b) {
+		if (a==b) return;
+		if (s[a]<s[b]) swap(a,b);
+		s[a]+=s[b];
+		p[b] = p[a];
+	}
+	void join(int a,int b) {
+		link(root(a),root(b));
+	}
+	int root(int x) {
+		if (p[x] == x) return x;
+		return p[x] = root(p[x]);
+	}
+};
