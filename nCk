@@ -1,0 +1,25 @@
+const int MOD = 1e9 + 7;
+vi fact;
+
+int power(int a,int n) {
+	int res = 1;
+	for (; n; n >>= 1,a = 1LL * a * a % MOD) {
+		if (n & 1) {
+			res = 1LL * res * a % MOD;
+		}
+	}
+	return res;
+}
+void init(int ng) {
+	//inv = vi(ng,0);
+	fact = vi(ng,1);
+	loop(i,1,len(fact))
+		fact[i] = (fact[i-1]*i)%MOD;
+}
+int inv(int x) {
+	return power(x, MOD-2);
+}
+int binom(int a, int b) {
+	assert(a>=b);
+	return (fact[a]*inv(fact[a-b]) % MOD)*inv(fact[b]) % MOD;
+}
