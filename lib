@@ -28,18 +28,19 @@ inline void chkmin(double& a,double b) { a=min(a,b); }
 //ifstream fin("input.in");
 //ofstream fout("output.out");
 
-
-
 void solve() {
 	
 }
 /*
-
 */
 int32_t main() {
+	//srand(time(nullptr));
 	ios_base::sync_with_stdio(0); std::cin.tie(0);
-	// int t; cin>>t; loop(i,0,t)
-	loop(i,0,1)
+	std::cout.tie(0);
+
+	 //int t; cin>>t; loop(i,0,t) {
+	loop(i,0,1) {
 		solve();
+	}
 	return 0;
 }
